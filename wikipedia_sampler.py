@@ -4,6 +4,7 @@ import getopt
 import requests
 import itertools
 import pandas as pd
+import numpy as np
 
 def main(title=None, save=None, cutoff=25000):
     root_article = title
@@ -39,7 +40,7 @@ def main(title=None, save=None, cutoff=25000):
     # Sample articles, reducing the weight of articles further down the list
     print titles.sample(
         n=5,
-        weights=1.0 / (1 + titles.index)
+        weights=1 / np.sqrt(1 + titles.index)
     )
 
 def parse_argv(argv):
