@@ -5,10 +5,13 @@ library(data.table)
 WEIGHT <- 10  # lower number increases probability of sampling closer articles
 
 # Downloaded CSVs from Quarry (online db w/ the latest wikipedia dump)
+# SQL query found here: https://quarry.wmflabs.org/query/13582
 d1 <- read.csv("~/Documents/open_data/Wikipedia-QuarryQuery/Educational_technology_distance1.csv") %>%
   data.table
+# SQL query found here: https://quarry.wmflabs.org/query/13581
 d2 <- read.csv("~/Documents/open_data/Wikipedia-QuarryQuery/Educational_technology_distance2.csv") %>%
   data.table
+# SQL query found here: https://quarry.wmflabs.org/query/13584
 d3 <- read.csv("~/Documents/open_data/Wikipedia-QuarryQuery/Educational_technology_distance3.csv") %>%
   data.table
 
