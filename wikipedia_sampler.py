@@ -6,6 +6,8 @@ import itertools
 import pandas as pd
 import numpy as np
 
+endpoint = 'https://en.wikipedia.org/w/api.php'
+    
 def main(title=None, save=None, cutoff=25000):
     root_article = title
     save_path = save
@@ -15,7 +17,6 @@ def main(title=None, save=None, cutoff=25000):
         print 'Must provide a Wikipedia article title'
         sys.exit(2)
 
-    endpoint = 'https://en.wikipedia.org/w/api.php'
     payload = {
         'action': 'query',
         'list': 'search',
